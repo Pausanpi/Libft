@@ -6,7 +6,7 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		ft_putchar_fd('-', fd);
 		ft_putchar_fd('2', fd);
-		n = 147483648
+		n = 147483648;
 	}
 	if (n < 0)
 	{
