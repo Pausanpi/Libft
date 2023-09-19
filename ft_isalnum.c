@@ -6,18 +6,19 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:39:27 by pausanch          #+#    #+#             */
-/*   Updated: 2023/09/14 10:55:23 by pausanch         ###   ########.fr       */
+/*   Updated: 2023/09/19 15:32:56 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//mirar como usar las funciones de ft_isalpha y fT_isdigit sin añadirlas
+//mirar como usar las funciones de ft_isalpha y ft_isdigit sin añadirlas
 //completamente
 
 #include "libft.h"
 
 int	ft_isalnum(int c)
 {
-	if (ft_isalpha(c) == 0 || ft_isdigit(c) == 0)
-		return (0);
-	return (c);
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
+		|| (c >= '0' && c <= '9'))
+		return (c);
+	return (0);
 }

@@ -6,12 +6,11 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 16:30:57 by pausanch          #+#    #+#             */
-/*   Updated: 2023/09/14 11:00:27 by pausanch         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:56:24 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_bzero(void *s, size_t n)
 {

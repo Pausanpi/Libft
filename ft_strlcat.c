@@ -6,14 +6,14 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:07:09 by pausanch          #+#    #+#             */
-/*   Updated: 2023/09/14 10:56:36 by pausanch         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:01:51 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-size_t	strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dest2;
 	size_t	src2;

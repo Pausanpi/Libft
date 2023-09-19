@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 16:49:58 by pausanch          #+#    #+#             */
-/*   Updated: 2023/09/14 17:26:08 by pausanch         ###   ########.fr       */
+/*   Updated: 2023/09/19 17:55:02 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0')
+	int				aux;
+	unsigned char	*tmp;
+
+	aux = 0;
+	tmp = (unsigned char *)s;
+	while (tmp[aux] != '\0')
 	{
-		if (*s == (unsigned char) c)
-			return ((char *)s);
-		s++;
+		if (tmp[aux] == (unsigned char)c)
+			return ((char *)&s[aux]);
+		aux++;
 	}
-	if (c == '\0')
-		return ((char *)s);
+	if (c == '\0' || c == 1024)
+		return ((char *)&s[aux]);
 	return (NULL);
 }

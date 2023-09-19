@@ -1,35 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 11:16:40 by pausanch          #+#    #+#             */
-/*   Updated: 2023/09/19 12:01:25 by pausanch         ###   ########.fr       */
+/*   Created: 2023/09/19 12:35:35 by pausanch          #+#    #+#             */
+/*   Updated: 2023/09/19 16:32:12 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	tmp;
-	size_t	cont;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	tmp = 0;
-	cont = 0;
-	while (src[cont] != '\0')
-		cont++;
-	if (dstsize != 0)
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
-		while ((src[tmp] != '\0') && (tmp < dstsize - 1))
+		if (i >= start && j < len)
 		{
-			dst[tmp] = src[tmp];
-			tmp++;
+			str[j] = s[i];
+			j++;
 		}
-		dst[tmp] = '\0';
+		i++;
 	}
-	return (cont);
+	str[j] = 0;
+	return (str);
 }
+/*
+int main()
+{
+	char cadena[] = "mazorquito";
+
+	printf("%s\n", ft_substr(cadena, 3, 4));
+	return (0);
+}
+*/
