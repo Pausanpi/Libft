@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:30:07 by pausanch          #+#    #+#             */
-/*   Updated: 2023/09/20 17:25:07 by pausanch         ###   ########.fr       */
+/*   Updated: 2023/09/20 17:51:32 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,27 @@ char	*ft_itoa(int n)
 	int			aux;
 
 	tmp = n;
+	if (tmp < 0)
+		tmp *= -1;
 	aux = size_num(tmp);
-	str = malloc(sizeof(char) * size_num(tmp));
+	if (n < 0)
+		aux++;
+	str = malloc(sizeof(char) * (aux + 1));
 	if (!str)
 		return (NULL);
-	if (tmp < 0)
-	{
-		tmp *= -1;
-		aux++;
-	}
 	str[aux--] = '\0';
 	while (aux >= 0)
 	{
-		str[aux] = (tmp % 10) + '0';
+		str[aux--] = (tmp % 10) + '0';
 		tmp /= 10;
-		aux--;
 	}
 	if (n < 0)
 		str[0] = '-';
 	return (str);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	printf("%s\n", ft_itoa(-12451232));
+	printf("%s\n", ft_itoa(-5859));
 	return (0);
-}
+}*/
