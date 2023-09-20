@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:33:53 by pausanch          #+#    #+#             */
-/*   Updated: 2023/09/18 15:34:15 by pausanch         ###   ########.fr       */
+/*   Updated: 2023/09/20 09:32:24 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	ptr = (void *)malloc(nmemb * size);
+	ptr = malloc(nmemb * size);
 	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, nmemb);
+		return (0);
+	ft_bzero(ptr, (nmemb * size));
 	return (ptr);
 }

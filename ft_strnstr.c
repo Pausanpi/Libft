@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:34:30 by pausanch          #+#    #+#             */
-/*   Updated: 2023/09/19 12:34:02 by pausanch         ###   ########.fr       */
+/*   Updated: 2023/09/20 09:45:54 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,17 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	x;
-	size_t	y;
+	size_t	tmp;
+	char	*orig;
+	char	*str;
 
-	x = 0;
-	if (!*needle)
-		return ((char *)haystack);
-	while (haystack)
+	tmp = -1;
+	orig = (char *)haystack;
+	str = (char *)needle;
+	while (tmp++ < len)
 	{
-		y = 0;
-		while (haystack[x] == needle[y] && haystack[x] && x < len)
-		{
-			x++;
-			y++;
-		}
-		if (!needle[y])
-			return ((char *)haystack + x);
-		x = (x - y) + 1;
+		if (orig[tmp] == str[tmp])
+			return (&orig[tmp]);
 	}
-	return (NULL);
+	return (0);
 }

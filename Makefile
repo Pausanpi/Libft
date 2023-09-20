@@ -6,7 +6,7 @@
 #    By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/14 15:49:50 by pausanch          #+#    #+#              #
-#    Updated: 2023/09/19 16:32:27 by pausanch         ###   ########.fr        #
+#    Updated: 2023/09/20 17:19:45 by pausanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,13 @@ SOURCE = ft_isalpha.c\
 	ft_calloc.c\
 	ft_strdup.c\
 	ft_substr.c\
+	ft_strjoin.c\
+	ft_putchar_fd.c\
+	ft_putendl_fd.c\
+	ft_putnbr_fd.c\
+	ft_putstr_fd.c\
+	ft_strtrim.c\
+	ft_itoa.c\
 
 OBJ = $(SOURCE:.c=.o)
 

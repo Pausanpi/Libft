@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:36:56 by pausanch          #+#    #+#             */
-/*   Updated: 2023/09/19 18:31:23 by pausanch         ###   ########.fr       */
+/*   Updated: 2023/09/20 08:59:08 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,13 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	size_t	tmp;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	while (i >= 0)
+	tmp = ft_strlen(s) + 1;
+	while (tmp--)
 	{	
-		if (s[i] == (char) c)
-			return ((char *)&s[i]);
-		i--;
+		if (s[tmp] == (char) c)
+			return ((char *)&s[tmp]);
 	}
-	return (0);
+	return (NULL);
 }

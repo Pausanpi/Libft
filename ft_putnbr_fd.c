@@ -6,7 +6,7 @@
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:32:19 by pausanch          #+#    #+#             */
-/*   Updated: 2023/09/18 15:32:49 by pausanch         ###   ########.fr       */
+/*   Updated: 2023/09/20 11:51:02 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(n + '0', fd);
 	else
 	{
-		ft_putchar_fd(nb / 10);
-		ft_putchar_fd(nb % 10);
-	}	
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
 }
