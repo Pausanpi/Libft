@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 12:35:35 by pausanch          #+#    #+#             */
-/*   Updated: 2023/09/21 16:01:04 by pausanch         ###   ########.fr       */
+/*   Created: 2023/09/21 14:39:42 by pausanch          #+#    #+#             */
+/*   Updated: 2023/09/21 17:47:49 by pausanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
-	size_t	l;
+	int		x;
 
-	l = ft_strlen(s);
+	x = 0;
 	if (!s)
 		return (NULL);
-	if (l < start)
-		return (ft_strdup(""));
-	if (l < start + len)
-		len = l - start;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
+	str = ft_strdup(s);
+	if (!str)
 		return (NULL);
-	ft_memcpy(str, s + start, len);
-	str[len] = '\0';
+	while (str[x])
+	{
+		str[x] = f(x, str[x]);
+		x++;
+	}
 	return (str);
 }
-/*
-int main()
-{
-	char cadena[] = "mazorquito";
-
-	printf("%s\n", ft_substr(cadena, 3, 4));
-	return (0);
-}
-*/

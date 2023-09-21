@@ -6,7 +6,7 @@
 #    By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/14 15:49:50 by pausanch          #+#    #+#              #
-#    Updated: 2023/09/20 17:19:45 by pausanch         ###   ########.fr        #
+#    Updated: 2023/09/21 17:48:11 by pausanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,9 @@ SOURCE = ft_isalpha.c\
 	ft_putstr_fd.c\
 	ft_strtrim.c\
 	ft_itoa.c\
+	ft_striteri.c\
+	ft_split.c\
+	ft_strmapi.c\
 
 OBJ = $(SOURCE:.c=.o)
 
