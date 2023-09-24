@@ -6,7 +6,7 @@
 #    By: pausanch <pausanch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/14 15:49:50 by pausanch          #+#    #+#              #
-#    Updated: 2023/09/21 17:48:11 by pausanch         ###   ########.fr        #
+#    Updated: 2023/09/22 09:41:56 by pausanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,18 @@ SOURCE = ft_isalpha.c\
 	ft_itoa.c\
 	ft_striteri.c\
 	ft_split.c\
-	ft_strmapi.c\
+	ft_strmapi.c
 
+SOURCE_BONUS = ft_lstnew.c\
+	ft_lstadd_front.c\
+	ft_lstsize.c\
+	ft_lstlast.c\
+	ft_lstadd_back.c\
+	ft_lstdelone.c\
+	ft_lstclear.c\
+	ft_lstiter.c\
+	ft_lstmap.c
+	
 OBJ = $(SOURCE:.c=.o)
 
 OBJ_BONUS = $(SOURCE_BONUS:.c=.o)
@@ -63,11 +73,15 @@ $(NAME): $(OBJ)
 	$(LIB) $(NAME) $(OBJ)
 
 clean:
-	rm -f $(OBJ) 
+	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus:
+	$(CC) $(CFLAGS) -c $(SOURCE_BONUS)
+	$(LIB) $(NAME) $(OBJ_BONUS)
 
 .PHONY: re all clean fclean bonus
